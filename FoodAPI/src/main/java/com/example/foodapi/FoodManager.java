@@ -7,8 +7,9 @@ import java.util.List;
 public class FoodManager {
 
     private List<FoodDetail> foodDetails;
-    private List<String> foodList;
     private double BMI;
+
+    private int maxConsumed = 0 ;
     private WeightStatus weightStatus;
     private String weightString;
     private double calories;
@@ -24,7 +25,6 @@ public class FoodManager {
             @Override
             public void getFoodDetails(List<FoodDetail> list) {
                 foodDetails = list;
-                printDetails();
             }
         });
     }
@@ -44,6 +44,7 @@ public class FoodManager {
         }else{
             weightStatus = WeightStatus.OBESITY;
         }
+        WeightStatus();
     }
 
     private void WeightStatus(){
@@ -62,13 +63,25 @@ public class FoodManager {
                 break;
         }
     }
-    private void checkCaloriesPerFood(){
-
-    }
-    private void printDetails(){
+    public double checkCaloriesPerFood(String foodName, double amountGrams){
+        double sum=0;
         for (FoodDetail f: foodDetails) {
-            foodList.add(f.getName());
-            Log.d("pttt", "food " + f.toString());
+            if(f.getName().toLowerCase().equals(foodName)){
+                double i ;
+                i =amountGrams/100;
+                sum = f.getCalories()*i;
+            }
         }
+        return sum;
     }
+
+
+    public List<FoodDetail> getFoodList() {
+        return foodDetails;
+    }
+
+    public void setMaxConsumed(int amount){
+        maxConsumed=amount;
+    }
+
 }
