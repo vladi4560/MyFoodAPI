@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D0ECB5"
-    tools:context=".MainActivity">
+    android:background="@drawable/background"
+   >
 
 
     <LinearLayout
@@ -22,9 +22,8 @@
             android:textAlignment="center"
             android:textSize="34sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="2dp" />
+            android:textColor="#CAEAB9"
+            />
 
 
         <ProgressBar
@@ -37,39 +36,6 @@
             android:max="2000"
             android:padding="30dp"
             android:progress="500" />
-        <!--        <ProgressBar-->
-        <!--            android:id="@+id/progressBar"-->
-        <!--            style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
-        <!--            android:layout_width="352dp"-->
-        <!--            android:layout_height="246dp"-->
-        <!--            android:layout_gravity="center"-->
-        <!--            android:paddingTop="20dp"-->
-        <!--            android:max="2000"-->
-        <!--            android:progress="0"-->
-        <!--            android:indeterminateOnly="true"-->
-        <!--            />-->
-
-        <TextView
-            android:id="@+id/textView_food"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:paddingTop="25dp"
-            android:text="Enter Food name "
-            android:textColorHighlight="#3C5535"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/foodInput"
-            android:layout_width="180dp"
-            android:layout_height="59dp"
-            android:layout_gravity="center"
-            android:hint="Enter Food"
-            android:inputType="text"
-            android:paddingTop="20dp"
-            android:text="" />
 
         <TextView
             android:id="@+id/textView_amount"
@@ -78,6 +44,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:paddingTop="20dp"
+            android:textColor="#CAEAB9"
             android:text="Enter Amount in Grams"
             android:textColorHighlight="#3C5535"
             android:textSize="24sp"
@@ -91,15 +58,43 @@
             android:layout_gravity="center"
             android:hint="Enter Amount"
             android:inputType="text"
+            android:textColorHint="@color/white"
             android:paddingTop="25dp"
             android:text="" />
+
+        <TextView
+            android:id="@+id/textView_food"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="25dp"
+            android:text="Enter Food name "
+            android:textColorHighlight="#3C5535"
+            android:textColor="#CAEAB9"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/foodInput"
+            android:layout_width="180dp"
+            android:layout_height="59dp"
+            android:layout_gravity="center"
+            android:hint="Enter Food"
+            android:inputType="text"
+            android:textColorHint="@color/white"
+            android:paddingTop="20dp"
+            android:text="" />
+
+
         <TextView
             android:id="@+id/ConsumedID"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text=""
             android:textAlignment="center"
-            android:textSize="18dp" />
+            android:textColor="@color/white"
+            android:textSize="22dp" />
 
         <Button
             android:id="@+id/AddButton"

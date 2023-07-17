@@ -10,13 +10,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.foodapi.FoodManager;
 
+import java.text.DecimalFormat;
+
 public class BmiActivity extends AppCompatActivity {
 
     private SeekBar heightSeekBar;
     private SeekBar weightSeekBar;
     private SeekBar ageSeekBar;
     private TextView heightMin, weightMin, ageMin;
-    private TextView heightMax, weightMax, ageMax;
+    private TextView heightMax, weightMax, ageMax,bmiAnswer,bmiSugg;
     private Button getBmiButton;
 
     private int valueOfAge, valueOfHeight, valueOfWeight;
@@ -34,9 +36,14 @@ public class BmiActivity extends AppCompatActivity {
         getBmiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int height = heightSeekBar.getProgress();
-                int weight = weightSeekBar.getProgress();
-                int age = ageSeekBar.getProgress();
+                double bmi;
+               if(valueOfAge!=0  && valueOfAge!=0 && valueOfAge!=0){
+                   bmi = FoodManager.getInstance().getBMI((double) valueOfHeight,(double)valueOfWeight,valueOfAge);
+                   DecimalFormat decimalFormat = new DecimalFormat("#");
+                   String formattedValue = decimalFormat.format(bmi);
+                   bmiAnswer.setText(formattedValue);
+                   bmiSugg.setText(FoodManager.getInstance().getWeightString());
+               }
 
                 // Perform some action with the height, weight, and age values
 
@@ -54,6 +61,8 @@ public class BmiActivity extends AppCompatActivity {
         heightSeekBar = findViewById(R.id.heightSeekBar);
         weightSeekBar = findViewById(R.id.weightSeekBar);
         ageSeekBar = findViewById(R.id.AgeSeekBar);
+        bmiAnswer = findViewById(R.id.Bmi_answer);
+        bmiSugg = findViewById(R.id.Bmi_suggestion);
         heightMin = findViewById(R.id.height_min);
         weightMin = findViewById(R.id.weight_min);
         ageMin = findViewById(R.id.Age_min);

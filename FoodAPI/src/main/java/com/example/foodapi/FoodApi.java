@@ -9,11 +9,11 @@ import retrofit2.http.Query;
 
 public interface FoodApi {
 
-    public static final String BASE_URL = "https://script.google.com/macros/s/AKfycbzoBV_kop-iUl1CEE34HR2uBbOrFRcf6YeP0rBBlPyXQE1iMEfgx4xkCUsGeq9hwLa1/";
+    public static final String BASE_URL = "https://script.google.com/macros/s/AKfycbxJ3RkOsgZMglqy3WFyoMPfpak_fJq0W9IDB636N8xFMVeklhszh5CKYNIh4SDyrUKx/";
 
-    @GET("exec")
-    Call<List<FoodDetail>> getFoodDetails(@Query("action") String getFood);
-
+    @GET("exec?action=meal")
+    Call<List<FoodDetail>> getFoodDetail(@Query("name") String getFood);
+//@Query("name") String getFood
     @GET("exec?action=getFood")
-    Call<List<FoodDetail>> getFoodDetails1();
+    Call<List<FoodDetail>> getFoodDetails();
 }

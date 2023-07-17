@@ -13,13 +13,27 @@
         android:theme="@style/Theme.MyFoodAPI"
         tools:targetApi="31">
         <activity
-            android:name=".BmiActivity"
+            android:name=".Splash_Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".BmiActivity"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".CaloriesActivity"
+            android:exported="true">
         </activity>
     </application>
 
